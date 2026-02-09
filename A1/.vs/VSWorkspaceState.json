@@ -7,13 +7,11 @@
   },
   "ExpandedNodes": [
     "",
-    "\\build",
-    "\\build\\CMakeFiles",
-    "\\build\\CMakeFiles\\4.2.1",
     "\\components",
     "\\components\\declaration",
-    "\\components\\definition"
+    "\\components\\definition",
+    "\\external\\imgui"
   ],
-  "SelectedNode": "\\build\\CMakeFiles\\4.2.1\\VCTargetsPath.vcxproj",
+  "SelectedNode": "\\CMakeLists.txt",
   "PreviewInSolutionExplorer": false
 }

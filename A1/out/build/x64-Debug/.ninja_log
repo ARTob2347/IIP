@@ -1,0 +1,6 @@
+# ninja log v6
+7	1118	7905231598982579	CMakeFiles/TEST.dir/components/definition/code_generator.cpp.obj	ee3a7291ff508d0
+709	940	7913062948759777	TEST.exe	8464f91d0f5fbb87
+8	929	7911316612773423	CMakeFiles/TEST.dir/components/definition/commands.cpp.obj	3f197696fe67a2b5
+5	709	7913062941721871	CMakeFiles/TEST.dir/main.cpp.obj	135208cb2a0adac4
+4	702	7913062536673803	CMakeFiles/TEST.dir/components/definition/saves.cpp.obj	4b509efec1b0aa35
