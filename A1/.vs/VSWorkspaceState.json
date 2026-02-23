@@ -10,8 +10,10 @@
     "\\components",
     "\\components\\declaration",
     "\\components\\definition",
+    "\\components\\visual",
+    "\\external",
     "\\external\\imgui"
   ],
-  "SelectedNode": "\\CMakeLists.txt",
+  "SelectedNode": "\\components\\definition\\commands.cpp",
   "PreviewInSolutionExplorer": false
 }

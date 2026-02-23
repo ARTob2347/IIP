@@ -1,6 +1,7 @@
 ﻿#include "components/declaration/form_model.h"
 #include "components/declaration/code_generator.h"
 #include "components/declaration/saves.h"
+#include "components/definition/commands.cpp"
 #include <iostream>
 #include <fstream>
 #include "external/imgui/imgui.h"
@@ -75,9 +76,28 @@ int main() {
 		{
 			if (ImGui::BeginMainMenuBar()) {
 				if (ImGui::BeginMenu("Файл")) {
-					if (ImGui::MenuItem("Сохранить как"))
+					if (ImGui::MenuItem("Сохранить как", "Ctrl+S")) {
+						save(form, save_name);
+					}
+					if (ImGui::MenuItem("Загрузить")) {
+						load(form, save_name);
+					}
+					ImGui::EndMenu();
 				}
+				if (ImGui::MenuItem("Бегать")) {
+					std::string code = generate_cpp(form);
+					std::ofstream out("generated_main.cpp", std::ios::binary);
+					out << code;
+					irun("generated_main.cpp");
+				}
+				ImGui::EndMenuBar();
 			}
+			ImGui::Separator();
+			ImGui::SetNextWindowSize(ImVec2(200, 100));
+			ImGui::Begin("Что-то там");
+			/*Ввод ширины и высоты
+			кнопки ок и отмена*/
+			ImGui::End();
 		}
 	}
 
@@ -113,8 +133,8 @@ int main() {
 }
 //ПРИМЕРЫ
 /*ImGui::Text("");
-			ImGui::InputText("Ввод:", &man);
-			if (ImGui::Button("Кнопка")) {
-				man = "";
-			}
-			ImGui::Text("номер %d",n)*/
+ImGui::InputText("Ввод:", &man);
+if (ImGui::Button("Кнопка")) {
+	man = "";
+}
+ImGui::Text("номер %d",n)*/
