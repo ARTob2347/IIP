@@ -1,6 +1,16 @@
 # ninja log v6
-7	1118	7905231598982579	CMakeFiles/TEST.dir/components/definition/code_generator.cpp.obj	ee3a7291ff508d0
-709	940	7913062948759777	TEST.exe	8464f91d0f5fbb87
-8	929	7911316612773423	CMakeFiles/TEST.dir/components/definition/commands.cpp.obj	3f197696fe67a2b5
-5	709	7913062941721871	CMakeFiles/TEST.dir/main.cpp.obj	135208cb2a0adac4
-4	702	7913062536673803	CMakeFiles/TEST.dir/components/definition/saves.cpp.obj	4b509efec1b0aa35
+13	714	7941510120925265	CMakeFiles/A1.dir/components/definition/commands.cpp.obj	6dc998846aa0959c
+1788	2726	7941499937836247	CMakeFiles/A1.dir/external/imgui/backends/imgui_impl_glfw.cpp.obj	4ebbf3dc6b59fa29
+1535	2553	7941499935311382	CMakeFiles/A1.dir/external/imgui/imgui_tables.cpp.obj	77026fda718dca36
+33	1534	7941499920296334	CMakeFiles/A1.dir/external/imgui/imgui_demo.cpp.obj	df0bb4578a872dce
+26	1787	7941499920231566	CMakeFiles/A1.dir/components/definition/saves.cpp.obj	9ef4588f63cd49f9
+24	1542	7941499920211623	CMakeFiles/A1.dir/components/definition/code_generator.cpp.obj	88b743ef31300c9b
+1918	2717	7941499939150389	CMakeFiles/A1.dir/external/imgui/backends/imgui_impl_opengl3.cpp.obj	9f0f57366e7a3f0d
+31	1918	7941499920269393	CMakeFiles/A1.dir/external/imgui/imgui.cpp.obj	3fbe1a02b40f413a
+14	877	7941512668566950	CMakeFiles/A1.dir/main.cpp.obj	cbb78cfb2ff2211c
+1511	2616	7941499935069391	CMakeFiles/A1.dir/external/imgui/imgui_draw.cpp.obj	6f300d3947f9fc29
+1543	2721	7941499935396260	CMakeFiles/A1.dir/external/imgui/imgui_widgets.cpp.obj	133c7b69390b954a
+17	574	7941512668590966	CMakeFiles/A1.dir/external/imgui/backends/imgui_stdlib.cpp.obj	6266c74a45c1a562
+877	1914	7941512677198412	A1.exe	cf7c7ceb929bf37
+9	1057	7941519264278288	CMakeFiles/A1.dir/main.cpp.obj	cbb78cfb2ff2211c
+1058	1774	7941519274755589	A1.exe	cf7c7ceb929bf37

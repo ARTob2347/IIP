@@ -1,14 +1,14 @@
 ﻿#include "components/declaration/form_model.h"
 #include "components/declaration/code_generator.h"
 #include "components/declaration/saves.h"
-#include "components/definition/commands.cpp"
+#include "components/declaration/commands.h"
 #include <iostream>
 #include <fstream>
 #include "external/imgui/imgui.h"
 #include "external/imgui/backends/imgui_impl_glfw.h"
 #include "external/imgui/backends/imgui_impl_opengl3.h"
 #include "external/imgui/backends/imgui_stdlib.h"
-#include <GLFW/glfw3.h>
+#include "GLFW/glfw3.h"
 void nekopiruj(SimpleForm& form) {
 	setlocale(LC_ALL, "Russian");
 	while (true) {
@@ -51,7 +51,7 @@ int main() {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	GLFWwindow* window = glfwCreateWindow(800, 600, "Dear ImGui Test", NULL, NULL);
-	if (window == null) return 1;
+	if (window == NULL) return 1;
 	glfwMakeContextCurrent(window);
 	glfwSwapInterval(1);
 
@@ -65,8 +65,15 @@ int main() {
 	ImGui_ImplOpenGL3_Init("#version 330");
 	static char man[256]="$";
 	int n = 10;
-	static char* filebuttons[] = {"Сохранить как","Загрузить"};
+	static int temp_sh = 800;
+	static int temp_vi = 600;
+	static std::string temp_na = "Untitled";
+	static bool temp_okno = false;
+	static char* filebuttons[] = {"Сохранить как","Загрузить","Создать"};
 	static int selectedindex = 0;
+	SimpleForm form;
+
+
 	while (!glfwWindowShouldClose(window)) {
 		glfwPollEvents();
 
@@ -77,11 +84,16 @@ int main() {
 			if (ImGui::BeginMainMenuBar()) {
 				if (ImGui::BeginMenu("Файл")) {
 					if (ImGui::MenuItem("Сохранить как", "Ctrl+S")) {
-						save(form, save_name);
+						/*save(form, save_name);*/
 					}
 					if (ImGui::MenuItem("Загрузить")) {
-						load(form, save_name);
+						/*load(form, save_name);*/
 					}
+					if (ImGui::MenuItem("Создать", "Ctrl+N")) {
+						temp_okno = true;
+
+					}
+					temp_okno = false;
 					ImGui::EndMenu();
 				}
 				if (ImGui::MenuItem("Бегать")) {
@@ -92,6 +104,30 @@ int main() {
 				}
 				ImGui::EndMenuBar();
 			}
+			if (temp_okno) {
+				ImGui::OpenPopup("Создание нового проекта");
+			}
+			if (ImGui::BeginPopupModal("Создание нового проекта", NULL)) {
+				ImGui::Text("Напиши ширину");
+				ImGui::InputInt("",&temp_sh);
+				ImGui::Text("Напиши высоту");
+				ImGui::InputInt("", &temp_vi);
+				ImGui::Text("Напиши название");
+				ImGui::InputText("", &temp_na);
+				if (ImGui::Button("ОК",ImVec2(30,60))) {
+					form.width = temp_sh;
+					form.height = temp_vi;
+					form.name = temp_na;
+					form.a.clear();
+					temp_okno = false;
+					ImGui::CloseCurrentPopup();
+				}
+				if (ImGui::Button("Отмена", ImVec2(30, 60))) {
+					ImGui::CloseCurrentPopup();
+					temp_okno = false;
+				}
+				ImGui::EndPopup();
+			}
 			ImGui::Separator();
 			ImGui::SetNextWindowSize(ImVec2(200, 100));
 			ImGui::Begin("Что-то там");
@@ -99,8 +135,21 @@ int main() {
 			кнопки ок и отмена*/
 			ImGui::End();
 		}
-	}
+		ImGui::Render();
+		int display_w, display_h;
+		glfwGetFramebufferSize(window, &display_w, &display_h);
+		glViewport(0, 0, display_w, display_h);
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
+		glfwSwapBuffers(window);
+	}
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+	ImGui::DestroyContext();
+	glfwDestroyWindow(window);
+	glfwTerminate();
 	/*setlocale(LC_ALL, "Russian");
 	SimpleForm form;
 	form.name = "test";

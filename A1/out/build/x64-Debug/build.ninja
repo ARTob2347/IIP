@@ -41,257 +41,129 @@ include CMakeFiles\rules.ninja
 
 cmake_ninja_workdir = D$:\IIP\A1\out\build\x64-Debug\
 # =============================================================================
-# Object build statements for EXECUTABLE target TEST
+# Object build statements for EXECUTABLE target A1
 
 
 #############################################
-# Order-only phony target for TEST
+# Order-only phony target for A1
 
-build cmake_object_order_depends_target_TEST: phony || .
+build cmake_object_order_depends_target_A1: phony || .
 
-build CMakeFiles\TEST.dir\components\definition\code_generator.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\components\definition\code_generator.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\main.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\main.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\components\definition
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\main.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\main.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\components\definition\code_generator.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\components\definition\code_generator.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\components\definition
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\components\definition\saves.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\components\definition\saves.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\components\definition\saves.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\components\definition\saves.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\components\definition
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\components\definition
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\components\definition\commands.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\components\definition\commands.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\components\definition\commands.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\components\definition\commands.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\components\definition
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\components\definition
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\external\imgui\imgui.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\imgui.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\external\imgui\backends\imgui_stdlib.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_stdlib.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\external\imgui\backends
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\external\imgui\imgui_demo.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\imgui_demo.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\external\imgui\imgui.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\external\imgui\imgui.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\external\imgui
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\external\imgui\imgui_draw.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\imgui_draw.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\external\imgui\imgui_demo.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\external\imgui\imgui_demo.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\external\imgui
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\external\imgui\imgui_tables.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\imgui_tables.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\external\imgui\imgui_draw.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\external\imgui\imgui_draw.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\external\imgui
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\external\imgui\imgui_widgets.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\imgui_widgets.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\external\imgui\imgui_tables.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\external\imgui\imgui_tables.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\external\imgui
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_allegro5.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_allegro5.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\external\imgui\imgui_widgets.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\external\imgui\imgui_widgets.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\external\imgui
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_android.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_android.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\external\imgui\backends\imgui_impl_glfw.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_glfw.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\external\imgui\backends
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_dx10.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_dx10.cpp || cmake_object_order_depends_target_TEST
+build CMakeFiles\A1.dir\external\imgui\backends\imgui_impl_opengl3.cpp.obj: CXX_COMPILER__A1_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_opengl3.cpp || cmake_object_order_depends_target_A1
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_dx11.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_dx11.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_dx12.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_dx12.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_dx9.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_dx9.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_glfw.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_glfw.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_glut.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_glut.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_null.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_null.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_opengl2.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_opengl2.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_opengl3.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_opengl3.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_sdl2.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_sdl2.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_sdl3.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_sdl3.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_sdlgpu3.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_sdlgpu3.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_sdlrenderer2.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_sdlrenderer2.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_sdlrenderer3.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_sdlrenderer3.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_vulkan.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_vulkan.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_wgpu.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_wgpu.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
-
-build CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_win32.cpp.obj: CXX_COMPILER__TEST_unscanned_Debug D$:\IIP\A1\external\imgui\backends\imgui_impl_win32.cpp || cmake_object_order_depends_target_TEST
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -ID:\IIP\A1\components\declaration
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  OBJECT_FILE_DIR = CMakeFiles\TEST.dir\external\imgui\backends
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_PDB = TEST.pdb
+  INCLUDES = -ID:\IIP\A1\components\declaration -ID:\IIP\A1\external\imgui -ID:\IIP\A1\external\imgui\backends -ID:\IIP\A1\external\glfw\include
+  OBJECT_DIR = CMakeFiles\A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\A1.dir\external\imgui\backends
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_PDB = A1.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target TEST
+# Link build statements for EXECUTABLE target A1
 
 
 #############################################
-# Link the executable TEST.exe
+# Link the executable A1.exe
 
-build TEST.exe: CXX_EXECUTABLE_LINKER__TEST_Debug CMakeFiles\TEST.dir\components\definition\code_generator.cpp.obj CMakeFiles\TEST.dir\main.cpp.obj CMakeFiles\TEST.dir\components\definition\saves.cpp.obj CMakeFiles\TEST.dir\components\definition\commands.cpp.obj CMakeFiles\TEST.dir\external\imgui\imgui.cpp.obj CMakeFiles\TEST.dir\external\imgui\imgui_demo.cpp.obj CMakeFiles\TEST.dir\external\imgui\imgui_draw.cpp.obj CMakeFiles\TEST.dir\external\imgui\imgui_tables.cpp.obj CMakeFiles\TEST.dir\external\imgui\imgui_widgets.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_allegro5.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_android.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_dx10.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_dx11.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_dx12.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_dx9.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_glfw.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_glut.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_null.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_opengl2.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_opengl3.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_sdl2.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_sdl3.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_sdlgpu3.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_sdlrenderer2.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_sdlrenderer3.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_vulkan.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_wgpu.cpp.obj CMakeFiles\TEST.dir\external\imgui\backends\imgui_impl_win32.cpp.obj
+build A1.exe: CXX_EXECUTABLE_LINKER__A1_Debug CMakeFiles\A1.dir\main.cpp.obj CMakeFiles\A1.dir\components\definition\code_generator.cpp.obj CMakeFiles\A1.dir\components\definition\saves.cpp.obj CMakeFiles\A1.dir\components\definition\commands.cpp.obj CMakeFiles\A1.dir\external\imgui\backends\imgui_stdlib.cpp.obj CMakeFiles\A1.dir\external\imgui\imgui.cpp.obj CMakeFiles\A1.dir\external\imgui\imgui_demo.cpp.obj CMakeFiles\A1.dir\external\imgui\imgui_draw.cpp.obj CMakeFiles\A1.dir\external\imgui\imgui_tables.cpp.obj CMakeFiles\A1.dir\external\imgui\imgui_widgets.cpp.obj CMakeFiles\A1.dir\external\imgui\backends\imgui_impl_glfw.cpp.obj CMakeFiles\A1.dir\external\imgui\backends\imgui_impl_opengl3.cpp.obj | D$:\IIP\A1\external\glfw\lib-vc2022\glfw3.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = CMakeFiles\TEST.dir
-  POST_BUILD = cd .
+  LINK_LIBRARIES = D:\IIP\A1\external\glfw\lib-vc2022\glfw3.lib  opengl32.lib  gdi32.lib  user32.lib  shell32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\A1.dir
+  POST_BUILD = C:\Windows\system32\cmd.exe /C "cd /D D:\IIP\A1\out\build\x64-Debug && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/Git/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/IIP/A1/out/build/x64-Debug/A1.exe -installedDir D:/Git/vcpkg/installed/x64-windows/debug/bin -OutVariable out"
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\TEST.dir\
-  TARGET_FILE = TEST.exe
-  TARGET_IMPLIB = TEST.lib
-  TARGET_PDB = TEST.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\A1.dir\
+  TARGET_FILE = A1.exe
+  TARGET_IMPLIB = A1.lib
+  TARGET_PDB = A1.pdb
 
 
 #############################################
@@ -319,7 +191,7 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build TEST: phony TEST.exe
+build A1: phony A1.exe
 
 # =============================================================================
 # Folder targets.
@@ -329,7 +201,7 @@ build TEST: phony TEST.exe
 #############################################
 # Folder: D:/IIP/A1/out/build/x64-Debug
 
-build all: phony TEST.exe
+build all: phony A1.exe
 
 # =============================================================================
 # Built-in targets
@@ -338,14 +210,14 @@ build all: phony TEST.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake D$:\IIP\A1\CMakeLists.txt
+build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindOpenGL.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake D$:\Git\vcpkg\scripts\buildsystems\vcpkg.cmake D$:\IIP\A1\CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake D$:\IIP\A1\CMakeLists.txt: phony
+build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindOpenGL.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake D$:\Git\vcpkg\scripts\buildsystems\vcpkg.cmake D$:\IIP\A1\CMakeLists.txt: phony
 
 
 #############################################
