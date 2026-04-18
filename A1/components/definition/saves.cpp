@@ -12,7 +12,8 @@ void save(const SimpleForm form, const std::string save_name) {
 
 }
 SimpleForm load(SimpleForm form, const std::string save_name) {
-	std::ifstream in(save_name + ".txt");
+
+	std::ifstream in(save_name);
 	form.a.clear();
 	in >> form.height;
 	in >> form.width;

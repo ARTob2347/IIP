@@ -5,6 +5,8 @@ struct BaseComponent {
 	std::string type;
 	std::string name;
 	int x, y;
+	int height;
+	int width;
 };
 struct SimpleForm {
 	int height;

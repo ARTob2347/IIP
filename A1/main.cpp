@@ -7,8 +7,28 @@
 #include "external/imgui/imgui.h"
 #include "external/imgui/backends/imgui_impl_glfw.h"
 #include "external/imgui/backends/imgui_impl_opengl3.h"
-#include "external/imgui/backends/imgui_stdlib.h"
 #include "GLFW/glfw3.h"
+#include <windows.h>
+#include <commdlg.h>
+
+std::string OpenFileDialog() {
+	OPENFILENAMEA ofn;
+	char szFile[260] = { 0 };
+	ZeroMemory(&ofn, sizeof(ofn));
+	ofn.lStructSize = sizeof(ofn);
+	ofn.hwndOwner = GetForegroundWindow();
+	ofn.lpstrFile = szFile;
+	ofn.nMaxFile = sizeof(szFile);
+	ofn.lpstrFilter = "All Files\0*.*\0Text Files\0*.txt\0";
+	ofn.nFilterIndex = 1;
+	ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_NOCHANGEDIR;
+
+	if (GetOpenFileNameA(&ofn)) {
+		return std::string(szFile);
+	}
+	return "";
+}
+
 void nekopiruj(SimpleForm& form) {
 	setlocale(LC_ALL, "Russian");
 	while (true) {
@@ -45,6 +65,7 @@ void nekopiruj(SimpleForm& form) {
 		}
 	}
 }
+
 int main() {
 	if (!glfwInit()) return 1;
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -63,16 +84,19 @@ int main() {
 
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 330");
-	static char man[256]="$";
+	static char man[256] = "$";
 	int n = 10;
 	static int temp_sh = 800;
 	static int temp_vi = 600;
-	static std::string temp_na = "Untitled";
+	static char temp_na[128] = "Untitled";
 	static bool temp_okno = false;
-	static char* filebuttons[] = {"Сохранить как","Загрузить","Создать"};
+	static char* filebuttons[] = { "Сохранить как","Загрузить","Создать" };
 	static int selectedindex = 0;
+	static bool form_open = false;
+	static bool open_save_dialog = false;
+	static bool open_load_dialog = false;
+	static char save_dialog_name[128] = "";
 	SimpleForm form;
-
 
 	while (!glfwWindowShouldClose(window)) {
 		glfwPollEvents();
@@ -82,18 +106,21 @@ int main() {
 		ImGui::NewFrame();
 		{
 			if (ImGui::BeginMainMenuBar()) {
-				if (ImGui::BeginMenu("Файл")) {
+				if (ImGui::BeginMenu("Fignya")) {
 					if (ImGui::MenuItem("Сохранить как", "Ctrl+S")) {
-						/*save(form, save_name);*/
+						open_save_dialog = true;
 					}
 					if (ImGui::MenuItem("Загрузить")) {
-						/*load(form, save_name);*/
+						std::string file = OpenFileDialog();
+						std::cout << file;
+						if (!file.empty()) {
+							form = load(form, file);
+							form_open = true;
+						}
 					}
 					if (ImGui::MenuItem("Создать", "Ctrl+N")) {
 						temp_okno = true;
-
 					}
-					temp_okno = false;
 					ImGui::EndMenu();
 				}
 				if (ImGui::MenuItem("Бегать")) {
@@ -102,37 +129,64 @@ int main() {
 					out << code;
 					irun("generated_main.cpp");
 				}
-				ImGui::EndMenuBar();
+				ImGui::EndMainMenuBar();
+			}
+			if (open_save_dialog) {
+				ImGui::OpenPopup("Сохранить как");
+				open_save_dialog = false;
+			}
+			if (ImGui::BeginPopupModal("Сохранить как", NULL)) {
+				ImGui::Text("Имя файла");
+				ImGui::InputText("##savename", save_dialog_name, IM_ARRAYSIZE(save_dialog_name));
+				if (ImGui::Button("OK", ImVec2(80, 60))) {
+					save(form, save_dialog_name);
+					ImGui::CloseCurrentPopup();
+				}
+				ImGui::EndPopup();
 			}
 			if (temp_okno) {
 				ImGui::OpenPopup("Создание нового проекта");
+				temp_okno = false;
 			}
 			if (ImGui::BeginPopupModal("Создание нового проекта", NULL)) {
 				ImGui::Text("Напиши ширину");
-				ImGui::InputInt("",&temp_sh);
+				ImGui::InputInt("##sh", &temp_sh);
 				ImGui::Text("Напиши высоту");
-				ImGui::InputInt("", &temp_vi);
+				ImGui::InputInt("##vi", &temp_vi);
 				ImGui::Text("Напиши название");
-				ImGui::InputText("", &temp_na);
-				if (ImGui::Button("ОК",ImVec2(30,60))) {
+				ImGui::InputText("##natrij", temp_na, IM_ARRAYSIZE(temp_na));
+				if (ImGui::Button("OK", ImVec2(100, 60))) {
 					form.width = temp_sh;
 					form.height = temp_vi;
 					form.name = temp_na;
 					form.a.clear();
 					temp_okno = false;
 					ImGui::CloseCurrentPopup();
+					form_open = true;
 				}
-				if (ImGui::Button("Отмена", ImVec2(30, 60))) {
+				ImGui::SameLine();
+				if (ImGui::Button("X", ImVec2(100, 60))) {
 					ImGui::CloseCurrentPopup();
 					temp_okno = false;
 				}
 				ImGui::EndPopup();
 			}
+			if (form_open == true && form.width > 0 && form.height > 0) {
+				ImGui::SetNextWindowSize(ImVec2(form.width, form.height), ImGuiCond_FirstUseEver);
+				ImGui::Begin(form.name.c_str(), nullptr);
+				for (auto& v : form.a) {
+					ImGui::SetCursorPos(ImVec2(v.x, v.y));
+					if (v.type == "Button") {
+						if (ImGui::Button(v.name.c_str(), ImVec2(120, 30))) {
+
+						}
+					}
+				}
+				ImGui::End();
+			}
 			ImGui::Separator();
 			ImGui::SetNextWindowSize(ImVec2(200, 100));
 			ImGui::Begin("Что-то там");
-			/*Ввод ширины и высоты
-			кнопки ок и отмена*/
 			ImGui::End();
 		}
 		ImGui::Render();
@@ -150,40 +204,4 @@ int main() {
 	ImGui::DestroyContext();
 	glfwDestroyWindow(window);
 	glfwTerminate();
-	/*setlocale(LC_ALL, "Russian");
-	SimpleForm form;
-	form.name = "test";
-	form.width = 500;
-	form.height = 300;
-	std::string choice;
-	std::cout << "Хотите ли вы загрузить проект? Y/N";
-	std::cout << "\n";
-	std::cin >> choice;
-	if (choice == "N") {
-		nekopiruj(form);
-	}
-	else if (choice == "Y") {
-		std::cout << "Как называется файл сохранения?";
-		std::cout << "\n";
-		std::string save_name;
-		std::cin >> save_name;
-		form=load(form, save_name);
-		nekopiruj(form);
-	}
-	else {
-		std::cout << "не то, напиши Y — да, N — нет\n";
-	}
-	std::string code=generate_cpp(form);
-	std::ofstream out("generated_main.cpp", std::ios::binary);
-	out << code;
-	std::cout << "+";*/
-
-	return 0;
 }
-//ПРИМЕРЫ
-/*ImGui::Text("");
-ImGui::InputText("Ввод:", &man);
-if (ImGui::Button("Кнопка")) {
-	man = "";
-}
-ImGui::Text("номер %d",n)*/
