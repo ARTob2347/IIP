@@ -96,6 +96,8 @@ int main() {
 	static bool open_save_dialog = false;
 	static bool open_load_dialog = false;
 	static char save_dialog_name[128] = "";
+	static int selected = -1;
+	static bool isdraw = false;
 	SimpleForm form;
 
 	while (!glfwWindowShouldClose(window)) {
@@ -174,13 +176,40 @@ int main() {
 			if (form_open == true && form.width > 0 && form.height > 0) {
 				ImGui::SetNextWindowSize(ImVec2(form.width, form.height), ImGuiCond_FirstUseEver);
 				ImGui::Begin(form.name.c_str(), nullptr);
-				for (auto& v : form.a) {
-					ImGui::SetCursorPos(ImVec2(v.x, v.y));
-					if (v.type == "Button") {
-						if (ImGui::Button(v.name.c_str(), ImVec2(120, 30))) {
-
-						}
+				ImDrawList* drawlist = ImGui::GetWindowDrawList();
+				ImVec2 convertcord = ImGui::GetCursorScreenPos();
+				ImVec2 convertsize = ImGui::GetContentRegionAvail();
+				if (convertsize.x < 50) {
+					convertsize.x = 50;
+				}
+				if (convertsize.y < 50) {
+					convertsize.y = 50;
+				}
+				ImVec2 convertend(convertcord.x + convertsize.x, convertcord.y + convertsize.y);
+				drawlist->AddRectFilled(convertcord,convertend,IM_COL32(251, 238, 223,255));
+				ImGui::InvisibleButton("Convert", convertsize);///Флаг!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				bool converthovered = ImGui::IsItemHovered();
+				bool clickonexist = false;
+				ImVec2 mishpos = ImGui::GetIO().MousePos;
+				for (int i = 0; i < form.a.size(); i++) {
+					auto& b = form.a[i];
+					ImVec2 P1(convertcord.x + (float)b.x, convertcord.y + (float)b.y);
+					ImVec2 P2(P1.x + (float)b.width, P1.y + (float)b.height);
+					bool hovered = mishpos.x >= P1.x && mishpos.x <= P2.x && mishpos.y >= P1.y && mishpos.y <= P2.y;
+					if (hovered && ImGui::IsMouseClicked(ImGuiMouseButton_Left)){
+						clickonexist = true;
+						selected = i;
 					}
+					drawlist->AddRectFilled(P1, P2, IM_COL32(200, 65, 200, 0));
+					drawlist->AddRect(P1, P2,
+						selected==i ? IM_COL32(255, 255, 255, 0): IM_COL32(0, 0, 0, 0),
+						0.0f,0,2.0f);
+				}
+				if (converthovered && ImGui::IsMouseClicked(ImGuiMouseButton_Left) && !clickonexist) {
+					isdraw = true;
+					selected = -1;
+					ImVec2 start = mishpos;
+					ImVec2 current = mishpos;
 				}
 				ImGui::End();
 			}
@@ -204,4 +233,5 @@ int main() {
 	ImGui::DestroyContext();
 	glfwDestroyWindow(window);
 	glfwTerminate();
+
 }
