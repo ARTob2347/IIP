@@ -98,8 +98,11 @@ int main() {
 	static char save_dialog_name[128] = "";
 	static int selected = -1;
 	static bool isdraw = false;
+	static ImVec2 start(0,0);
+	static ImVec2 current(0,0);
+	BaseComponent e{"Button","ALAH",50,50,100,100};
 	SimpleForm form;
-
+	form.a.push_back(e);
 	while (!glfwWindowShouldClose(window)) {
 		glfwPollEvents();
 
@@ -162,6 +165,7 @@ int main() {
 					form.height = temp_vi;
 					form.name = temp_na;
 					form.a.clear();
+					form.a.push_back(e);
 					temp_okno = false;
 					ImGui::CloseCurrentPopup();
 					form_open = true;
@@ -208,8 +212,41 @@ int main() {
 				if (converthovered && ImGui::IsMouseClicked(ImGuiMouseButton_Left) && !clickonexist) {
 					isdraw = true;
 					selected = -1;
-					ImVec2 start = mishpos;
-					ImVec2 current = mishpos;
+					start = mishpos;
+					current = mishpos;
+
+				}
+				if (isdraw && ImGui::IsMouseDown(ImGuiMouseButton_Left)) {
+					current = mishpos;
+					ImVec2 P1((start.x < current.x) ? start.x : current.x, 
+						(start.y<current.y)?start.y:current.y);
+					ImVec2 P2((start.x > current.x) ? start.x : current.x,
+						(start.y > current.y) ? start.y : current.y);
+					///if (P2.x<convertend.x && P)
+					drawlist->AddRectFilled(P1, P2, IM_COL32(0, 0, 0, 0));
+
+				}
+				if (isdraw && ImGui::IsMouseReleased(ImGuiMouseButton_Left)){
+					isdraw = false;
+					ImVec2 P1((start.x < current.x) ? start.x : current.x,
+						(start.y < current.y) ? start.y : current.y);
+					ImVec2 P2((start.x > current.x) ? start.x : current.x,
+						(start.y > current.y) ? start.y : current.y);
+					int nx = (int)(P1.x - convertcord.x);
+					int ny = (int)(P1.y - convertcord.y);
+					int nw = (int)(P2.x - P1.x);
+					int nh = (int)(P2.y - P1.y);
+					if (nh >= 10 && nw >= 10) {
+						BaseComponent pr;
+						pr.type = "Pramougolnic";
+						pr.name = "number"+std::to_string(form.a.size());
+						pr.x = nx;
+						pr.y = ny;
+						pr.height = nh;
+						pr.width = nw;
+						form.a.push_back(pr);
+						selected =(int) form.a.size() - 1;
+					}
 				}
 				ImGui::End();
 			}
