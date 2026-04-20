@@ -190,8 +190,8 @@ int main() {
 					convertsize.y = 50;
 				}
 				ImVec2 convertend(convertcord.x + convertsize.x, convertcord.y + convertsize.y);
-				drawlist->AddRectFilled(convertcord,convertend,IM_COL32(251, 238, 223,255));
 				ImGui::InvisibleButton("Convert", convertsize);///Флаг!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				drawlist->AddRectFilled(convertcord,convertend,IM_COL32(251, 238, 223,255));
 				bool converthovered = ImGui::IsItemHovered();
 				bool clickonexist = false;
 				ImVec2 mishpos = ImGui::GetIO().MousePos;
@@ -204,9 +204,9 @@ int main() {
 						clickonexist = true;
 						selected = i;
 					}
-					drawlist->AddRectFilled(P1, P2, IM_COL32(200, 65, 200, 0));
+					drawlist->AddRectFilled(P1, P2, IM_COL32(200, 65, 200, 255));
 					drawlist->AddRect(P1, P2,
-						selected==i ? IM_COL32(255, 255, 255, 0): IM_COL32(0, 0, 0, 0),
+						selected==i ? IM_COL32(0,0,0,255): IM_COL32(5, 99, 255, 0),
 						0.0f,0,2.0f);
 				}
 				if (converthovered && ImGui::IsMouseClicked(ImGuiMouseButton_Left) && !clickonexist) {
@@ -224,7 +224,7 @@ int main() {
 						(start.y > current.y) ? start.y : current.y);
 					///if (P2.x<convertend.x && P)
 					drawlist->AddRectFilled(P1, P2, IM_COL32(0, 0, 0, 0));
-
+					drawlist->AddRect(P1, P2, IM_COL32(0, 0, 0, 255), 0.0f, 0, 2.0f);
 				}
 				if (isdraw && ImGui::IsMouseReleased(ImGuiMouseButton_Left)){
 					isdraw = false;
