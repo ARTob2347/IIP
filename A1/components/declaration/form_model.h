@@ -4,6 +4,9 @@
 struct BaseComponent {
 	std::string type;
 	std::string name;
+	std::string caption;
+	std::string text;
+	bool checked = false;
 	int x, y;
 	int height;
 	int width;

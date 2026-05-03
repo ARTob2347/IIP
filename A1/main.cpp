@@ -68,6 +68,7 @@ void nekopiruj(SimpleForm& form) {
 
 int main() {
 	if (!glfwInit()) return 1;
+	glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -100,9 +101,16 @@ int main() {
 	static bool isdraw = false;
 	static ImVec2 start(0,0);
 	static ImVec2 current(0,0);
-	BaseComponent e{"Button","ALAH",50,50,100,100};
+	static bool open_insert_modal = false;
+	static const char* types[] = {
+		"button","label","edit","checkbox"
+	};
+	BaseComponent e{"button","ALAH", "clickk","1",false,50,50,100,100};
+	BaseComponent f{ "label","HALAL", "LABEL","1",false,200,200,100,100 };
 	SimpleForm form;
 	form.a.push_back(e);
+	form.a.push_back(f);
+	auto makeid = [](const BaseComponent& c, int i)->std::string {return "##" + c.name + std::to_string(i); };
 	while (!glfwWindowShouldClose(window)) {
 		glfwPollEvents();
 
@@ -111,11 +119,11 @@ int main() {
 		ImGui::NewFrame();
 		{
 			if (ImGui::BeginMainMenuBar()) {
-				if (ImGui::BeginMenu("Fignya")) {
-					if (ImGui::MenuItem("Сохранить как", "Ctrl+S")) {
+				if (ImGui::BeginMenu("File")) {
+					if (ImGui::MenuItem("Save as", "Ctrl+S")) {
 						open_save_dialog = true;
 					}
-					if (ImGui::MenuItem("Загрузить")) {
+					if (ImGui::MenuItem("Upload")) {
 						std::string file = OpenFileDialog();
 						std::cout << file;
 						if (!file.empty()) {
@@ -123,12 +131,15 @@ int main() {
 							form_open = true;
 						}
 					}
-					if (ImGui::MenuItem("Создать", "Ctrl+N")) {
+					if (ImGui::MenuItem("Create", "Ctrl+N")) {
 						temp_okno = true;
 					}
 					ImGui::EndMenu();
 				}
-				if (ImGui::MenuItem("Бегать")) {
+				if (ImGui::MenuItem("Insert")) {
+					open_insert_modal = true;
+				}
+				if (ImGui::MenuItem("Run")) {
 					std::string code = generate_cpp(form);
 					std::ofstream out("generated_main.cpp", std::ios::binary);
 					out << code;
@@ -137,11 +148,11 @@ int main() {
 				ImGui::EndMainMenuBar();
 			}
 			if (open_save_dialog) {
-				ImGui::OpenPopup("Сохранить как");
+				ImGui::OpenPopup("Save as");
 				open_save_dialog = false;
 			}
-			if (ImGui::BeginPopupModal("Сохранить как", NULL)) {
-				ImGui::Text("Имя файла");
+			if (ImGui::BeginPopupModal("Save as", NULL)) {
+				ImGui::Text("File name:");
 				ImGui::InputText("##savename", save_dialog_name, IM_ARRAYSIZE(save_dialog_name));
 				if (ImGui::Button("OK", ImVec2(80, 60))) {
 					save(form, save_dialog_name);
@@ -150,15 +161,15 @@ int main() {
 				ImGui::EndPopup();
 			}
 			if (temp_okno) {
-				ImGui::OpenPopup("Создание нового проекта");
+				ImGui::OpenPopup("Creating a new project");
 				temp_okno = false;
 			}
-			if (ImGui::BeginPopupModal("Создание нового проекта", NULL)) {
-				ImGui::Text("Напиши ширину");
+			if (ImGui::BeginPopupModal("Creating a new project", NULL)) {
+				ImGui::Text("Write width");
 				ImGui::InputInt("##sh", &temp_sh);
-				ImGui::Text("Напиши высоту");
+				ImGui::Text("write height");
 				ImGui::InputInt("##vi", &temp_vi);
-				ImGui::Text("Напиши название");
+				ImGui::Text("Write name");
 				ImGui::InputText("##natrij", temp_na, IM_ARRAYSIZE(temp_na));
 				if (ImGui::Button("OK", ImVec2(100, 60))) {
 					form.width = temp_sh;
@@ -166,6 +177,42 @@ int main() {
 					form.name = temp_na;
 					form.a.clear();
 					form.a.push_back(e);
+					form.a.push_back(f);
+					temp_okno = false;
+					ImGui::CloseCurrentPopup();
+					form_open = true;
+				}
+				ImGui::SameLine();
+				if (ImGui::Button("X", ImVec2(100, 60))) {
+					ImGui::CloseCurrentPopup();
+					temp_okno = false;
+				}
+				ImGui::EndPopup();
+			}
+			if (open_insert_modal) {
+				ImGui::OpenPopup("Creating new element");
+				open_insert_modal = false;
+			}
+			if (ImGui::BeginPopupModal("Creating new element", NULL)) {
+				ImGui::Text("Write type");
+				int selectedtype = 0;
+				//ImGui::Combo("##type", &selectedtype, types, IM_ARRAYSIZE(types));
+				//ImGui::Text("write name");
+				//ImGui::InputText("##vi", &temp_vi);
+				//ImGui::Text("Write caption");
+				//ImGui::Text("Write ");
+	
+				//int x, y;
+				//int height;
+				//int width;
+				ImGui::InputText("##natrij", temp_na, IM_ARRAYSIZE(temp_na));
+				if (ImGui::Button("OK", ImVec2(100, 60))) {
+					form.width = temp_sh;
+					form.height = temp_vi;
+					form.name = temp_na;
+					form.a.clear();
+					form.a.push_back(e);
+					form.a.push_back(f);
 					temp_okno = false;
 					ImGui::CloseCurrentPopup();
 					form_open = true;
@@ -197,6 +244,7 @@ int main() {
 				ImVec2 mishpos = ImGui::GetIO().MousePos;
 				for (int i = 0; i < form.a.size(); i++) {
 					auto& b = form.a[i];
+					std::string id = makeid(b,i);
 					ImVec2 P1(convertcord.x + (float)b.x, convertcord.y + (float)b.y);
 					ImVec2 P2(P1.x + (float)b.width, P1.y + (float)b.height);
 					bool hovered = mishpos.x >= P1.x && mishpos.x <= P2.x && mishpos.y >= P1.y && mishpos.y <= P2.y;
@@ -204,7 +252,24 @@ int main() {
 						clickonexist = true;
 						selected = i;
 					}
-					drawlist->AddRectFilled(P1, P2, IM_COL32(200, 65, 200, 255));
+					ImGui::SetCursorScreenPos(P1);
+					if (b.type == "button"){
+						ImGui::Button(b.caption.c_str(), ImVec2(b.width, b.height));
+					}
+					else if (b.type == "label") {
+						ImGui::Text(b.caption.c_str());
+					}
+					//else if (b.caption == "edit") {
+					//	ImGui::SetNextItemWidth(b.width);
+						//ImGui::InputText(id.c_str(), b.text.c_str(), );//FdfdfdsffAHGFJKUDIRBNGVTFUIJHYKDSHYBGVR
+					//}
+					else if (b.type=="checkbox"){
+						ImGui::Checkbox(b.caption.c_str(),&b.checked);
+					}
+					else {
+						drawlist->AddRectFilled(P1, P2, IM_COL32(200, 65, 200, 255));
+						drawlist->AddText(ImVec2(P1.x + 4,P1.y+4),IM_COL32(0,0,0,255),b.name.c_str());
+					}
 					drawlist->AddRect(P1, P2,
 						selected==i ? IM_COL32(0,0,0,255): IM_COL32(5, 99, 255, 0),
 						0.0f,0,2.0f);
@@ -259,7 +324,7 @@ int main() {
 		int display_w, display_h;
 		glfwGetFramebufferSize(window, &display_w, &display_h);
 		glViewport(0, 0, display_w, display_h);
-		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);// БЕЛАЯ ТЕМА ТУТ
 		glClear(GL_COLOR_BUFFER_BIT);
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
