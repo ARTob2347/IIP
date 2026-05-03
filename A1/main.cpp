@@ -105,11 +105,7 @@ int main() {
 	static const char* types[] = {
 		"button","label","edit","checkbox"
 	};
-	BaseComponent e{"button","ALAH", "clickk","1",false,50,50,100,100};
-	BaseComponent f{ "label","HALAL", "LABEL","1",false,200,200,100,100 };
 	SimpleForm form;
-	form.a.push_back(e);
-	form.a.push_back(f);
 	auto makeid = [](const BaseComponent& c, int i)->std::string {return "##" + c.name + std::to_string(i); };
 	while (!glfwWindowShouldClose(window)) {
 		glfwPollEvents();
@@ -176,8 +172,6 @@ int main() {
 					form.height = temp_vi;
 					form.name = temp_na;
 					form.a.clear();
-					form.a.push_back(e);
-					form.a.push_back(f);
 					temp_okno = false;
 					ImGui::CloseCurrentPopup();
 					form_open = true;
@@ -211,8 +205,6 @@ int main() {
 					form.height = temp_vi;
 					form.name = temp_na;
 					form.a.clear();
-					form.a.push_back(e);
-					form.a.push_back(f);
 					temp_okno = false;
 					ImGui::CloseCurrentPopup();
 					form_open = true;
@@ -316,8 +308,22 @@ int main() {
 				ImGui::End();
 			}
 			ImGui::Separator();
-			ImGui::SetNextWindowSize(ImVec2(200, 100));
-			ImGui::Begin("Что-то там");
+			ImGui::SetNextWindowSize(ImVec2(300, 500));
+			ImGui::Begin("Object inspector");
+			if (selected < 0 || selected >= form.a.size()) {
+				ImGui::Text("no components selected");
+			}
+			else {
+				auto& cur = form.a[selected];
+				ImGui::Text("selected: %s", cur.name.c_str());
+				ImGui::Separator();
+				ImGui::Text("common");
+				ImGui::Text("X: %d", cur.x);
+				ImGui::Text("Y: %d", cur.y);
+				ImGui::Text("height: %d", cur.height);
+				ImGui::Text("Width: %d", cur.width);
+				ImGui::Text("Type: %s", cur.type.c_str());
+			}
 			ImGui::End();
 		}
 		ImGui::Render();
