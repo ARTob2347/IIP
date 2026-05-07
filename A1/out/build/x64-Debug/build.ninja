@@ -155,7 +155,7 @@ build CMakeFiles\A1.dir\external\imgui\backends\imgui_impl_opengl3.cpp.obj: CXX_
 
 build A1.exe: CXX_EXECUTABLE_LINKER__A1_Debug CMakeFiles\A1.dir\main.cpp.obj CMakeFiles\A1.dir\components\definition\code_generator.cpp.obj CMakeFiles\A1.dir\components\definition\saves.cpp.obj CMakeFiles\A1.dir\components\definition\commands.cpp.obj CMakeFiles\A1.dir\external\imgui\backends\imgui_stdlib.cpp.obj CMakeFiles\A1.dir\external\imgui\imgui.cpp.obj CMakeFiles\A1.dir\external\imgui\imgui_demo.cpp.obj CMakeFiles\A1.dir\external\imgui\imgui_draw.cpp.obj CMakeFiles\A1.dir\external\imgui\imgui_tables.cpp.obj CMakeFiles\A1.dir\external\imgui\imgui_widgets.cpp.obj CMakeFiles\A1.dir\external\imgui\backends\imgui_impl_glfw.cpp.obj CMakeFiles\A1.dir\external\imgui\backends\imgui_impl_opengl3.cpp.obj | D$:\IIP\A1\external\glfw\lib-vc2022\glfw3.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console  -mconsole
   LINK_LIBRARIES = D:\IIP\A1\external\glfw\lib-vc2022\glfw3.lib  opengl32.lib  gdi32.lib  user32.lib  shell32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\A1.dir
   POST_BUILD = C:\Windows\system32\cmd.exe /C "cd /D D:\IIP\A1\out\build\x64-Debug && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/Git/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/IIP/A1/out/build/x64-Debug/A1.exe -installedDir D:/Git/vcpkg/installed/x64-windows/debug/bin -OutVariable out"

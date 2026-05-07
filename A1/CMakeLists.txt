@@ -21,6 +21,10 @@ add_executable(A1
     external/imgui/backends/imgui_impl_opengl3.cpp
  "components/declaration/commands.h")
 
+ if(WIN32)
+    target_link_options(A1 PRIVATE -mconsole)
+endif()
+
 target_include_directories(A1 PRIVATE
     components/declaration
     external/imgui

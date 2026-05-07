@@ -80,7 +80,7 @@ std::string generate_cpp(const SimpleForm& form) {
 
     // Создаём компоненты
     for (const auto& c : form.a) {
-        if (c.type == "button") {
+        if (c.type == "Pramougolnic") {
             o << "    CreateWindowA(\"BUTTON\", \"" << esc(c.caption) << "\",\n";
             o << "        WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,\n";
             o << "        " << c.x << ", " << c.y << ", "

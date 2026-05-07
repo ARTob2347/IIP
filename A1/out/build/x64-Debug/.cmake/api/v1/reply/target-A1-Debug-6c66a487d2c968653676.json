@@ -15,6 +15,7 @@
 		[
 			"_add_executable",
 			"add_executable",
+			"target_link_options",
 			"target_link_libraries",
 			"target_include_directories"
 		],
@@ -43,13 +44,19 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 31,
+				"line" : 25,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 24,
+				"line" : 35,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 28,
 				"parent" : 0
 			}
 		]
@@ -66,19 +73,19 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "D:/IIP/A1/components/declaration"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "D:/IIP/A1/external/imgui"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "D:/IIP/A1/external/imgui/backends"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "D:/IIP/A1/external/glfw/include"
 				}
 			],
@@ -123,26 +130,31 @@
 			},
 			{
 				"backtrace" : 3,
+				"fragment" : "-mconsole",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 4,
 				"fragment" : "D:\\IIP\\A1\\external\\glfw\\lib-vc2022\\glfw3.lib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 4,
 				"fragment" : "opengl32.lib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 4,
 				"fragment" : "gdi32.lib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 4,
 				"fragment" : "user32.lib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 4,
 				"fragment" : "shell32.lib",
 				"role" : "libraries"
 			},

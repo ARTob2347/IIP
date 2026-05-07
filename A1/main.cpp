@@ -105,6 +105,7 @@ int main() {
 	static const char* types[] = {
 		"button","label","edit","checkbox"
 	};
+	static int activtool = 0;
 	SimpleForm form;
 	auto makeid = [](const BaseComponent& c, int i)->std::string {return "##" + c.name + std::to_string(i); };
 	while (!glfwWindowShouldClose(window)) {
@@ -114,6 +115,12 @@ int main() {
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 		{
+			if (selected >= 0 && selected<form.a.size()) {
+				if (ImGui::IsKeyPressed(ImGuiKey_Delete)||ImGui::IsKeyPressed(ImGuiKey_Backspace)) {
+					form.a.erase(form.a.begin() + selected);
+					selected = -1;
+				}
+			}
 			if (ImGui::BeginMainMenuBar()) {
 				if (ImGui::BeginMenu("File")) {
 					if (ImGui::MenuItem("Save as", "Ctrl+S")) {
@@ -137,9 +144,25 @@ int main() {
 				}
 				if (ImGui::MenuItem("Run")) {
 					std::string code = generate_cpp(form);
-					std::ofstream out("generated_main.cpp", std::ios::binary);
+					char temp[MAX_PATH];
+					GetCurrentDirectoryA(MAX_PATH, temp);
+					std::string fullpath = std::string(temp) + "\\generated_main.cpp";
+					std::ofstream out(fullpath, std::ios::binary);
 					out << code;
-					irun("generated_main.cpp");
+					out.close();
+					irun(fullpath);
+				}
+				if (ImGui::BeginMenu("Add")){
+					if (ImGui::MenuItem("Label")){
+						activtool = 1;
+					}
+					if (ImGui::MenuItem("Button")){						
+						activtool = 0;
+					}
+					if (ImGui::MenuItem("Checkbox")){
+						activtool = 3;
+					}
+					ImGui::EndMenu();
 				}
 				ImGui::EndMainMenuBar();
 			}
@@ -260,7 +283,7 @@ int main() {
 					}
 					else {
 						drawlist->AddRectFilled(P1, P2, IM_COL32(200, 65, 200, 255));
-						drawlist->AddText(ImVec2(P1.x + 4,P1.y+4),IM_COL32(0,0,0,255),b.name.c_str());
+						drawlist->AddText(ImVec2(P1.x + 4,P1.y+4),IM_COL32(255,255,255,0),b.name.c_str());
 					}
 					drawlist->AddRect(P1, P2,
 						selected==i ? IM_COL32(0,0,0,255): IM_COL32(5, 99, 255, 0),
@@ -280,8 +303,8 @@ int main() {
 					ImVec2 P2((start.x > current.x) ? start.x : current.x,
 						(start.y > current.y) ? start.y : current.y);
 					///if (P2.x<convertend.x && P)
-					drawlist->AddRectFilled(P1, P2, IM_COL32(0, 0, 0, 0));
-					drawlist->AddRect(P1, P2, IM_COL32(0, 0, 0, 255), 0.0f, 0, 2.0f);
+					drawlist->AddRectFilled(P1, P2, IM_COL32(80, 140, 255, 50));
+					drawlist->AddRect(P1, P2, IM_COL32(80, 140, 255, 220), 0.0f, 0, 2.0f);
 				}
 				if (isdraw && ImGui::IsMouseReleased(ImGuiMouseButton_Left)){
 					isdraw = false;
@@ -295,7 +318,19 @@ int main() {
 					int nh = (int)(P2.y - P1.y);
 					if (nh >= 10 && nw >= 10) {
 						BaseComponent pr;
-						pr.type = "Pramougolnic";
+						if (activtool == 0) {
+							pr.type = "button";
+							pr.caption = "button";
+						}
+						else if (activtool==1){
+							pr.type = "label";
+							pr.caption = "label";
+						}
+						else if (activtool == 3) {
+							pr.type = "checkbox";
+							pr.caption = "checkbox";
+							pr.checked = false;
+						}
 						pr.name = "number"+std::to_string(form.a.size());
 						pr.x = nx;
 						pr.y = ny;
@@ -309,6 +344,8 @@ int main() {
 			}
 			ImGui::Separator();
 			ImGui::SetNextWindowSize(ImVec2(300, 500));
+			static int lastselected = -1;
+			static char captionbufer[256] = "";
 			ImGui::Begin("Object inspector");
 			if (selected < 0 || selected >= form.a.size()) {
 				ImGui::Text("no components selected");
@@ -317,12 +354,17 @@ int main() {
 				auto& cur = form.a[selected];
 				ImGui::Text("selected: %s", cur.name.c_str());
 				ImGui::Separator();
-				ImGui::Text("common");
 				ImGui::Text("X: %d", cur.x);
 				ImGui::Text("Y: %d", cur.y);
 				ImGui::Text("height: %d", cur.height);
+				if (ImGui::InputText("##caption", captionbufer, IM_ARRAYSIZE(captionbufer))) {
+					cur.caption = std::string(captionbufer);
+					int dlinnastr = ImGui::CalcTextSize(cur.caption.c_str()).x;
+					cur.width = dlinnastr;
+				}
 				ImGui::Text("Width: %d", cur.width);
 				ImGui::Text("Type: %s", cur.type.c_str());
+				///ImGui::InputTextMultiline("##ziggg",captionbufer, IM_ARRAYSIZE(captionbufer),ImVec2(100,100));
 			}
 			ImGui::End();
 		}
