@@ -105,6 +105,8 @@ int main() {
 	static const char* types[] = {
 		"button","label","edit","checkbox"
 	};
+	static bool isdrag = false;
+	static ImVec2 dragoffset(0, 0);
 	static int activtool = 0;
 	SimpleForm form;
 	auto makeid = [](const BaseComponent& c, int i)->std::string {return "##" + c.name + std::to_string(i); };
@@ -257,6 +259,7 @@ int main() {
 				bool converthovered = ImGui::IsItemHovered();
 				bool clickonexist = false;
 				ImVec2 mishpos = ImGui::GetIO().MousePos;
+				ImGui::PushStyleColor(ImGuiCol_Text,IM_COL32(0,0,0,255));
 				for (int i = 0; i < form.a.size(); i++) {
 					auto& b = form.a[i];
 					std::string id = makeid(b,i);
@@ -266,6 +269,8 @@ int main() {
 					if (hovered && ImGui::IsMouseClicked(ImGuiMouseButton_Left)){
 						clickonexist = true;
 						selected = i;
+						isdrag = true;
+						dragoffset = ImVec2(mishpos.x - P1.x, mishpos.y - P1.y);
 					}
 					ImGui::SetCursorScreenPos(P1);
 					if (b.type == "button"){
@@ -288,6 +293,23 @@ int main() {
 					drawlist->AddRect(P1, P2,
 						selected==i ? IM_COL32(0,0,0,255): IM_COL32(5, 99, 255, 0),
 						0.0f,0,2.0f);
+				}
+				ImGui::PopStyleColor(1);
+				if (isdrag && selected >= 0 && ImGui::IsMouseDown(ImGuiMouseButton_Left)) {
+					BaseComponent &u = form.a[selected];
+					int nx = (int)mishpos.x-dragoffset.x-convertcord.x;
+					int ny = (int)mishpos.y - dragoffset.y - convertcord.y;
+					if (nx < 0) {
+						nx = 0;
+					}
+					if (ny < 0) {
+						ny = 0;
+					}
+					u.x = nx;
+					u.y = ny;
+				}
+				if (ImGui::IsMouseReleased(ImGuiMouseButton_Left)) {
+					isdrag = false;
 				}
 				if (converthovered && ImGui::IsMouseClicked(ImGuiMouseButton_Left) && !clickonexist) {
 					isdraw = true;
