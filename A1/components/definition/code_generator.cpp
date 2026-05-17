@@ -2,7 +2,7 @@
 #include <sstream>
 #include <string>
 
-// Экранируем строку для вставки в C++ код
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ C++ пїЅпїЅпїЅ
 static std::string esc(const std::string& s) {
     std::string r;
     for (char c : s) {
@@ -16,11 +16,11 @@ static std::string esc(const std::string& s) {
 std::string generate_cpp(const SimpleForm& form) {
     std::ostringstream o;
 
-    // --- Заголовки ---
+    // --- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ---
     o << "#include <windows.h>\n";
     o << "#include <string>\n\n";
 
-    // --- Объявляем ID для каждого компонента ---
+    // --- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ---
     int id = 1001;
     for (const auto& c : form.a) {
         o << "#define ID_" << c.name << " " << id++ << "\n";
@@ -31,7 +31,7 @@ std::string generate_cpp(const SimpleForm& form) {
     o << "LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {\n";
     o << "    switch (msg) {\n";
 
-    // OnClick для кнопок
+    // OnClick пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     bool has_buttons = false;
     for (const auto& c : form.a) {
         if (c.type == "button") {
@@ -69,7 +69,7 @@ std::string generate_cpp(const SimpleForm& form) {
     o << "    wc.hCursor       = LoadCursor(NULL, IDC_ARROW);\n";
     o << "    RegisterClass(&wc);\n\n";
 
-    // Создаём главное окно
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     o << "    HWND hwnd = CreateWindowA(\n";
     o << "        \"FormClass\", \"" << esc(form.name) << "\",\n";
     o << "        WS_OVERLAPPEDWINDOW,\n";
@@ -78,9 +78,9 @@ std::string generate_cpp(const SimpleForm& form) {
     o << "        NULL, NULL, hInst, NULL\n";
     o << "    );\n\n";
 
-    // Создаём компоненты
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     for (const auto& c : form.a) {
-        if (c.type == "Pramougolnic") {
+        if (c.type == "button") {
             o << "    CreateWindowA(\"BUTTON\", \"" << esc(c.caption) << "\",\n";
             o << "        WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,\n";
             o << "        " << c.x << ", " << c.y << ", "
@@ -110,7 +110,7 @@ std::string generate_cpp(const SimpleForm& form) {
         }
     }
 
-    // Показываем окно и запускаем message loop
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ message loop
     o << "    ShowWindow(hwnd, nCmdShow);\n";
     o << "    UpdateWindow(hwnd);\n\n";
     o << "    MSG msg = {};\n";
